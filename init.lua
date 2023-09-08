@@ -1,6 +1,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- DISABLING NETRW FOR NVIM-TREE 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1  
+
+
 -- Install LAZY.NVIM 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -92,7 +97,6 @@ require('lazy').setup({
 {
 	-- Set lualine as statusline
 	'nvim-lualine/lualine.nvim',
-	-- See `:help lualine.txt`
 	opts = {
 		options = {
 			icons_enabled = false,
@@ -484,7 +488,17 @@ require('lazy').setup({
 			"IndentBlanklineIndent5",
 			"IndentBlanklineIndent6",
 		},
+
 	}
+
+
+
+
+
+--	CONFIGURING NVIM-TREE
+require("nvim-tree").setup()
+vim.keymap.set({"n", "v", "i"}, "<A-1>", vim.cmd.NvimTreeOpen)
+vim.keymap.set({"n", "v", "i"}, "<A-2>", vim.cmd.NvimTreeClose)
 
 
 --	:Ex -> <leader>pv
@@ -499,5 +513,4 @@ vim.keymap.set("n", "<leader>T", vim.cmd.terminal)
 vim.keymap.set("n", "<C-n>", vim.cmd.tabnew)
 vim.keymap.set("n", "<A-RIGHT>", vim.cmd.tabn)
 vim.keymap.set("n", "<A-LEFT>", vim.cmd.tabp)
-
 
