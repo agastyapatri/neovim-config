@@ -24,7 +24,9 @@ return {
 
 	-- IN-EDITOR TERMINAL	
 	{
-		{'akinsho/toggleterm.nvim', version = "*", config = true}
+		'akinsho/toggleterm.nvim', 
+		version = "*", 
+		config = true
 	},
 
 	-- INDENT GUIDES 
@@ -54,7 +56,7 @@ return {
 			},
 		},
 	},
-	
+
 	-- TELESCOPE  
 	{
 		'nvim-telescope/telescope.nvim',
@@ -93,7 +95,7 @@ return {
 			'folke/neodev.nvim',
 		},
 	},
-	
+
 	-- NVIM-CMP: AUTOCOMPLETION
 	{
 		'hrsh7th/nvim-cmp',
@@ -109,7 +111,7 @@ return {
 			'rafamadriz/friendly-snippets',
 		},
 	},
-	
+
 	-- GITSIGNS: Adds git related signs to the gutter, as well as utilities for managing changes 
 	{
 		'lewis6991/gitsigns.nvim',
@@ -128,17 +130,33 @@ return {
 				-- don't override the built-in and fugitive keymaps
 				local gs = package.loaded.gitsigns
 				vim.keymap.set({'n', 'v'}, ']c', function()
-					if vim.wo.diff then return ']c' end
+				if vim.wo.diff then return ']c' end
 					vim.schedule(function() gs.next_hunk() end)
 					return '<Ignore>'
 					end, {expr=true, buffer = bufnr, desc = "Jump to next hunk"})
 				vim.keymap.set({'n', 'v'}, '[c', function()
-					if vim.wo.diff then return '[c' end
+				if vim.wo.diff then return '[c' end
 					vim.schedule(function() gs.prev_hunk() end)
 					return '<Ignore>'
 					end, {expr=true, buffer = bufnr, desc = "Jump to previous hunk"})
 			end,
 		},
 	},
+
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		}
+	},
+
+
 
 }

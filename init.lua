@@ -47,8 +47,8 @@ vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.tabstop = 4 
-vim.o.shiftwidth = 4 
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
@@ -369,3 +369,6 @@ vim.keymap.set({"n", "v", "i"}, "<C-n>", vim.cmd.tabnew)
 vim.keymap.set({"n", "v", "i"}, "<A-RIGHT>", vim.cmd.tabn)
 vim.keymap.set({"n", "v", "i"}, "<A-LEFT>", vim.cmd.tabp)
 
+
+--	CONFIGURING WHICH-KEY
+local wk = require("which-key")
