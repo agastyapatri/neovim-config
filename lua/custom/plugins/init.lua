@@ -30,7 +30,7 @@ return {
 	},
 
 	-- INDENT GUIDES 
-	{	'lukas-reineke/indent-blankline.nvim',	},
+	{	'lukas-reineke/indent-blankline.nvim',	main="ibl", opts={}},
 
 	-- SMART COMMENTING
 	{ 'numToStr/Comment.nvim', opts = {} },

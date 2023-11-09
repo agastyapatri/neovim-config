@@ -329,26 +329,27 @@ require("cmp").setup({
 })
 
 -- CONFIGURING INDENT BLANKLINE 
-vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#FFFFFF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#FFFFFF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#FFFFFF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#FFFFFF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#FFFFFF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#FFFFFF gui=nocombine]]
-vim.opt.list = true
-require("indent_blankline").setup {
-	space_char_blankline = " ",
-	char_highlight_list = {
-		"IndentBlanklineIndent1",
-		"IndentBlanklineIndent2",
-		"IndentBlanklineIndent3",
-		"IndentBlanklineIndent4",
-		"IndentBlanklineIndent5",
-		"IndentBlanklineIndent6",
-	},
 
+local highlight = {
+	"White"
 }
+
+local hooks = require "ibl.hooks"
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "White", { fg = "#BDBDBD" })
+    -- vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    -- vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    -- vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    -- vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    -- vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    -- vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+
+require("ibl").setup { indent = { highlight = highlight } }
+
+
 
 --	CONFIGURING NVIM-TREE
 require("nvim-tree").setup()
@@ -363,6 +364,10 @@ vim.keymap.set("n", "<leader>px", vim.cmd.Rex)
 --	toggleterminal
 vim.keymap.set("n", "<leader>tt", vim.cmd.ToggleTerm)
 vim.keymap.set("n", "<leader>T", vim.cmd.terminal)
+vim.keymap.set({"n", "t", "i", "v"}, "<C-t>", "<C-\\><C-n><C-w>k")
+vim.keymap.set({"n", "i", "v"}, "<C-t>", "<C-\\><C-n><C-w>j")
+
+
 
 --  tab navigation 
 vim.keymap.set({"n", "v", "i"}, "<C-n>", vim.cmd.tabnew)
@@ -371,4 +376,3 @@ vim.keymap.set({"n", "v", "i"}, "<A-LEFT>", vim.cmd.tabp)
 
 
 --	CONFIGURING WHICH-KEY
-local wk = require("which-key")
