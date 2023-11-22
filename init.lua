@@ -22,7 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	-- FIND ALL THE PLUGINS INSTALLED IN ~/.config/nvim/lua/custom/plugins/init.lua 
-	import = 'custom.plugins'
+	import = 'plugins'
 	}, {})
 
 
