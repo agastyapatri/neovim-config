@@ -1,3 +1,17 @@
+-----------------------------------------------
+--	||\\   || \\      //  ||  ||\\    //||  --
+--	|| \\  ||  \\    //   ||  || \\  // ||  --
+--	||  \\ ||   \\  //    ||  ||  \\//  ||  --
+--	||   \\||    \\//     ||  ||   \/   ||  --
+-----------------------------------------------
+
+
+--[[THINGS TO BE DONE: 22nd Nov 2023]]
+-- 2. Seperate the configurations into a different files 
+
+
+
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -274,6 +288,7 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load({paths = {"snippets"}})
 luasnip.config.setup {}
 
 cmp.setup {
