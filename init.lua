@@ -11,36 +11,13 @@
 
 
 
-
+--[[GENERAL EDITOR SETTINGS]]
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- DISABLING NETRW FOR NVIM-TREE 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1  
-
-
--- Install LAZY.NVIM 
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system {
-		'git',
-		'clone',
-		'--filter=blob:none',
-		'https://github.com/folke/lazy.nvim.git',
-		'--branch=stable', -- latest stable release
-		lazypath,
-	}
-end
-vim.opt.rtp:prepend(lazypath)
-
-require('lazy').setup({
-	-- FIND ALL THE PLUGINS INSTALLED IN ~/.config/nvim/lua/custom/plugins/init.lua 
-	import = 'plugins'
-	}, {})
-
-
---[[GENERAL EDITOR SETTINGS]]
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -95,6 +72,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
+----------------------------------------------------------
+-- 	PACKAGE MANAGEMENT: INSTALLING LAZY.NVIM 
+----------------------------------------------------------
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system {
+		'git',
+		'clone',
+		'--filter=blob:none',
+		'https://github.com/folke/lazy.nvim.git',
+		'--branch=stable', -- latest stable release
+		lazypath,
+	}
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+	-- FIND ALL THE PLUGINS INSTALLED IN ~/.config/nvim/lua/plugins/init.lua
+	-- FIND ALL THE CONFIGURATIONS IN  ~/.config/nvim/lua/options
+	import = 'plugins'}, {})
 
 
 
@@ -288,7 +285,7 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
-require('luasnip.loaders.from_vscode').lazy_load({paths = {"snippets"}})
+require('luasnip.loaders.from_lua').lazy_load({paths = {"~/.config/nvim/lua/snippets"}})
 luasnip.config.setup {}
 
 cmp.setup {
@@ -386,8 +383,6 @@ vim.keymap.set("n", "<leader>tt", vim.cmd.ToggleTerm)
 vim.keymap.set("n", "<leader>T", vim.cmd.terminal)
 vim.keymap.set({"n", "t", "i", "v"}, "<C-t>", "<C-\\><C-n><C-w>k")
 vim.keymap.set({"n", "i", "v"}, "<C-t>", "<C-\\><C-n><C-w>j")
-
-
 
 --  tab navigation 
 vim.keymap.set({"n", "v", "i"}, "<C-n>", vim.cmd.tabnew)

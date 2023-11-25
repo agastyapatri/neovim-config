@@ -138,3 +138,24 @@ ls.add_snippets(nil, {
 })
 
 
+ls.add_snippets(nil, {
+	all = {
+		-- 	Initializing and triggering the snippet 
+		snip({
+			trig = "ifnm",
+			namr = "ifnm",
+			dscr = "Generating a import guard",
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
+					"if __name__ == \"__main__\": ",
+					"	pass",
+				}),
+				insert(0)
+		}),
+
+	},
+})
+
+
