@@ -10,8 +10,6 @@
 require("options")
 require("mappings")
 
-
-
 ----------------------------------------------------------
 -- 	PACKAGE MANAGEMENT: INSTALLING LAZY.NVIM 
 ----------------------------------------------------------
@@ -28,6 +26,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--	Importing from the plugins directory 
 require('lazy').setup({
 	import = 'plugins'}, {}
 )
@@ -35,8 +34,8 @@ require('lazy').setup({
 
 -- SETUP NEOVIM LUA CONFIGURATION
 require('neodev').setup()
--- IMPORTING PLUGIN CONFIGURATIONS
 
+-- IMPORTING PLUGIN CONFIGURATIONS
 require("configs.lsp")
 require("configs.treesitter")
 require("configs.indent-blankline")
@@ -44,11 +43,3 @@ require("configs.nvim-tree")
 require("configs.toggleterm")
 require("configs.telescope")
 require("configs.nvim-cmp")
-
-
-
-
-
-
-
-
