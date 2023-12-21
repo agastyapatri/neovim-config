@@ -9,6 +9,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Set highlight on search
 vim.o.hlsearch = false
 
+--	cursorline 
+vim.opt.cursorline = true 
+
 -- Make line numbers default
 vim.wo.relativenumber = true
 

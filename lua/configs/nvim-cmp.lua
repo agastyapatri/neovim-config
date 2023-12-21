@@ -223,3 +223,26 @@ ls.add_snippets(nil, {
 })
 
 
+ls.add_snippets(nil, {
+	all = {
+		-- 	Initializing and triggering the snippet 
+		snip({
+			trig = "timer",
+			namr = "timer",
+			dscr = "timing the execution of a snippet of code",
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
+					"import timeit",
+					"start = timeit.default_timer()",
+					"end = timeit.default_timer()",
+					"print(end - start)",
+				}),
+				insert(0)
+		}),
+
+	},
+})
+
+

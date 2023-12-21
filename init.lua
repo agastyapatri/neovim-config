@@ -4,12 +4,9 @@
 --	||  \\||   \\//   ||  ||  \/  ||  --
 -----------------------------------------------
 
-
-
 -- OPTIONS MAPPINGS ETC. 
 require("options")
 require("mappings")
-
 ----------------------------------------------------------
 -- 	PACKAGE MANAGEMENT: INSTALLING LAZY.NVIM 
 ----------------------------------------------------------
@@ -25,12 +22,10 @@ if not vim.loop.fs_stat(lazypath) then
 	}
 end
 vim.opt.rtp:prepend(lazypath)
-
---	Importing from the plugins directory 
 require('lazy').setup({
+	--	go to lua/plugins for the modules of all the installed plugins 
 	import = 'plugins'}, {}
 )
-
 
 -- SETUP NEOVIM LUA CONFIGURATION
 require('neodev').setup()
