@@ -38,3 +38,8 @@ require("configs.nvim-tree")
 require("configs.toggleterm")
 require("configs.telescope")
 require("configs.nvim-cmp")
+require("configs.colorscheme")
+
+vim.cmd[[colorscheme tokyonight]]
+
+

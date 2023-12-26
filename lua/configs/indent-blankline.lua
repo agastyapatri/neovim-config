@@ -1,14 +1,14 @@
 local highlight = {
-	-- "White"
-	"Yellow"
+	"White"
+	-- "Yellow"
 }
 
 local hooks = require "ibl.hooks"
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, "Yellow", { fg = "#FFF800" })
-    -- vim.api.nvim_set_hl(0, "White", { fg = "#BDBDBD" })
+    -- vim.api.nvim_set_hl(0, "Yellow", { fg = "#FFF800" })
+    vim.api.nvim_set_hl(0, "White", { fg = "#BDBDBD" })
     -- vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
     -- vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
     -- vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
