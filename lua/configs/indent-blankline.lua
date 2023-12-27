@@ -8,7 +8,7 @@ local hooks = require "ibl.hooks"
 -- every time the colorscheme changes
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     -- vim.api.nvim_set_hl(0, "Yellow", { fg = "#FFF800" })
-    vim.api.nvim_set_hl(0, "White", { fg = "#BDBDBD" })
+    vim.api.nvim_set_hl(0, "White", { fg = "#B2B8CF" })
     -- vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
     -- vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
     -- vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
