@@ -6,9 +6,9 @@ require("tokyonight").setup({
 
 	styles = {
 		comments = {italic = true},
-		keywords = {italic = true, bold = true},
-		functions = {},
-		variables = {},
+		keywords = {bold = true},
+		functions = {bold = true},
+		variables = {italic = true},
 
 		sidebars = "light",
 		floats = "dark",

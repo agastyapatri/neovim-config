@@ -28,10 +28,10 @@ require('lazy').setup({
 )
 
 -- SETUP NEOVIM LUA CONFIGURATION
-require('neodev').setup()
+-- require('neodev').setup()
 
 -- IMPORTING PLUGIN CONFIGURATIONS
-require("configs.lsp")
+require("configs.nvim-lspconfig")
 require("configs.treesitter")
 require("configs.indent-blankline")
 require("configs.nvim-tree")
