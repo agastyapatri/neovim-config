@@ -166,13 +166,13 @@ ls.add_snippets(nil, {
 		-- 	the content of the snippet 
 		{
 			text({
-					" \"\"\" ",
+					"\"\"\" ",
 					"<text here>",
 					" ",
 					"[args]:",
 					" ",
 					"[returns]:",
-					" \"\"\" ",
+					"\"\"\" ",
 				}),
 				insert(0)
 		}),
@@ -194,6 +194,30 @@ ls.add_snippets(nil, {
 			text({
 					"def TestFunc() -> type:",
 					"	pass",
+				}),
+				insert(0)
+		}),
+
+	},
+})
+
+
+
+-- CLASS PROTOTYPE 
+ls.add_snippets(nil, {
+	all = {
+		-- 	Initializing and triggering the snippet 
+		snip({
+			trig = "gen_class",
+			namr = "genclass",
+			dscr = "Generating boilerplate for a class prototype",
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
+					"class ClassName:",
+					"	def __init__(self, ):",
+					"		pass",
 				}),
 				insert(0)
 		}),

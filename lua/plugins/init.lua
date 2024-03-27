@@ -7,11 +7,16 @@ return {
 	{	'tpope/vim-rhubarb'	},
 
 	-- ALPHA-NVIM: A NEOVIM STARTUP SCREEN
+	-- {
+	-- 	"goolord/alpha-nvim",
+	-- 	config = function ()
+	-- 		require"alpha".setup(require"alpha.themes.dashboard".config)
+	-- 	end
+	-- },
 	{
-		"goolord/alpha-nvim",
-		config = function ()
-			require"alpha".setup(require"alpha.themes.dashboard".config)
-		end
-	},
-
+	    "eoh-bse/minintro.nvim",
+	    opts = { color = "#BA0000" },
+	    config = true,
+	    lazy = false
+	}
 }
