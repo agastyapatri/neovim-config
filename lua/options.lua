@@ -1,6 +1,7 @@
 --[[GENERAL EDITOR SETTINGS]]
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.o.scrolloff = 10
 
 -- DISABLING NETRW FOR NVIM-TREE 
 vim.g.loaded_netrw = 1
@@ -42,7 +43,6 @@ vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
-vim.o.scrolloff = 8
 
 
 -- NOTE: You should make sure your terminal supports this
