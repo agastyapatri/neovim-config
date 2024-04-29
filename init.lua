@@ -27,19 +27,15 @@ require('lazy').setup({
 	import = 'plugins'}, {}
 )
 
--- SETUP NEOVIM LUA CONFIGURATION
--- require('neodev').setup()
-
 -- IMPORTING PLUGIN CONFIGURATIONS
-require("configs.nvim-lspconfig")
 require("configs.treesitter")
-require("configs.indent-blankline")
+require("configs.nvim-lspconfig")
+require("configs.colorscheme")
+vim.cmd[[colorscheme tokyonight]]
 require("configs.nvim-tree")
 require("configs.toggleterm")
 require("configs.telescope")
 require("configs.nvim-cmp")
-require("configs.colorscheme")
-
-vim.cmd[[colorscheme tokyonight]]
+require("configs.indent-blankline")
 
 

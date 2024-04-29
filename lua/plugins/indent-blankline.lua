@@ -1,4 +1,7 @@
 return {	
-	'lukas-reineke/indent-blankline.nvim',	main="ibl", opts={}
+	'lukas-reineke/indent-blankline.nvim',	
+	-- event = 'VeryLazy',
+	main="ibl", 
+	opts={}
 }
 

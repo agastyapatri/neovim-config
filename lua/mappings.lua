@@ -1,7 +1,7 @@
 --  TAB NAVIGATION 
 vim.keymap.set({"n", "v", "i"}, "<C-n>", vim.cmd.tabnew)
-vim.keymap.set({"n", "v", "i"}, "<A-RIGHT>", vim.cmd.tabn)
-vim.keymap.set({"n", "v", "i"}, "<A-LEFT>", vim.cmd.tabp)
+vim.keymap.set({"n", "v", "i"}, "<A-l>", vim.cmd.tabn)
+vim.keymap.set({"n", "v", "i"}, "<A-h>", vim.cmd.tabp)
 
 -- DIAGNOSTIC KEYMAPS
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
