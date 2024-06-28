@@ -1,6 +1,5 @@
 return {
 	'hrsh7th/nvim-cmp',
-	-- event = "VeryLazy",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
 		'L3MON4D3/LuaSnip',

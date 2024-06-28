@@ -1,12 +1,7 @@
------------------------------------------------
---	||\\  || \\    // ||  ||\\  //||  --
---	|| \\ ||  \\  //  ||  || \\// ||  --
---	||  \\||   \\//   ||  ||  \/  ||  --
------------------------------------------------
-
 -- OPTIONS MAPPINGS ETC. 
 require("options")
 require("mappings")
+
 ----------------------------------------------------------
 -- 	PACKAGE MANAGEMENT: INSTALLING LAZY.NVIM 
 ----------------------------------------------------------
@@ -30,12 +25,12 @@ require('lazy').setup({
 -- IMPORTING PLUGIN CONFIGURATIONS
 require("configs.treesitter")
 require("configs.nvim-lspconfig")
-require("configs.colorscheme")
-vim.cmd[[colorscheme tokyonight]]
+
+-- load the individual colorschemes depending on which theme is desired
+require("configs.tokyonight")
+vim.cmd("colorscheme tokyonight")
 require("configs.nvim-tree")
-require("configs.toggleterm")
 require("configs.telescope")
 require("configs.nvim-cmp")
 require("configs.indent-blankline")
-
 

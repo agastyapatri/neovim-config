@@ -1,10 +1,10 @@
---------------------------------------
--- 	TELESCOPE: FUZZY FINDING OF FILES
---------------------------------------
-
+-- --------------------------------------
+-- -- 	TELESCOPE: FUZZY FINDING OF FILES
+-- --------------------------------------
+--
 return {
 	'nvim-telescope/telescope.nvim',
-	-- event = 'VeryLazy',
+	event = 'VeryLazy',
 	branch = '0.1.x',
 	dependencies = {
 		'nvim-lua/plenary.nvim',
@@ -21,6 +21,5 @@ return {
 			end,
 		},
 	},
-
-
 }
+

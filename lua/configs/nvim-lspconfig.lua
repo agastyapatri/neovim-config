@@ -1,7 +1,4 @@
 --	CONFIGURING LSP AND STUFF 
-
-
-
 local on_attach = function(_, bufnr)
 	-- NOTE: Remember that lua is a real programming language, and as such it is possible
 	-- to define small helper and utility functions so you don't have to repeat yourself
@@ -66,16 +63,19 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
 			-- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-			-- diagnostics = { disable = { 'missing-fields' } },
+			diagnostics = { disable = { 'missing-fields' } },
 		},
 	},
+	marksman = {},
 }
+
+
+
 
 -- Setup neovim lua configuration
 require('neodev').setup()

@@ -4,8 +4,7 @@
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	-- event = 'VeryLazy',
-
+	event = 'VeryLazy',
 	version = "*",
 	lazy = false,
 	dependencies = {
@@ -14,6 +13,5 @@ return {
 	config = function()
 		require("nvim-tree").setup {}
 	end,
-	
 }
 

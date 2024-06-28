@@ -4,18 +4,13 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.scrolloff = 10
 vim.o.guicursor = "i:block-Cursor"
-
-
-
-
-
 -- DISABLING NETRW FOR NVIM-TREE 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1  
 
 -- Set highlight on search
 vim.o.hlsearch = false
-
+vim.o.background = "dark"
 --	cursorline 
 vim.opt.cursorline = true 
 
