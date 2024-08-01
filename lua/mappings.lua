@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- 		Keybindings to use the inbuilt terminal 
 -- vim.keymap.set('n', "<leader>tt", vim.cmd.ToggleTerm)
-vim.keymap.set('n', "<leader>tt", vim.cmd.terminal)
+-- vim.keymap.set('n', "<leader>tt", vim.cmd.terminal)
 -- 		NETRW KEYMAPS
 vim.keymap.set("n", "<A-1>", vim.cmd.Ex)
 vim.keymap.set("n", "<A-2>", vim.cmd.Rex)
