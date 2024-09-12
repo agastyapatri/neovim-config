@@ -32,4 +32,12 @@ return {
 	{
 		'akinsho/toggleterm.nvim', version = "*", config = true
 	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false, 
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		}
+	},
 }

@@ -1,20 +1,20 @@
+vim.g.loaded_netrw = 1 
+vim.g.loaded_netrwPlugin = 1 
+vim.opt.termguicolors = true 
 require("nvim-tree").setup({
 	sort = {
-		sorter = "case_sensitive",
+		sorter = "case_sensitive",	
 	},
 	view = {
-		width = 25,
+		width = 30
 	},
 	renderer = {
-		group_empty = true,
+		group_empty = true
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = true
 	},
+
 })
-vim.keymap.set({"n", "v", "i"}, "<A-1>", vim.cmd.NvimTreeOpen)
-vim.keymap.set({"n", "v", "i"}, "<A-2>", vim.cmd.NvimTreeClose)
-
-
--- netrw has been disabled. uncomment if ever getting rid of nvim-tree
-
+vim.keymap.set({"n", "i"}, "<A-1>", vim.cmd.NvimTreeOpen)
+vim.keymap.set({"n", "i"}, "<A-2>", vim.cmd.NvimTreeClose)
