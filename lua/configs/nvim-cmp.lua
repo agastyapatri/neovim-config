@@ -6,64 +6,64 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
-	},
-	completion = {
-		completeopt = 'menu,menuone,noinsert'
-	},
-	mapping = cmp.mapping.preset.insert {
-		['<C-n>'] = cmp.mapping.select_next_item(),
-		['<C-p>'] = cmp.mapping.select_prev_item(),
-		['<C-d>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-Space>'] = cmp.mapping.complete {},
-		['<CR>'] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		},
-		['<Tab>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_locally_jumpable() then
-				luasnip.expand_or_jump()
-			else
-				fallback()
-			end
-		end, { 'i', 's' }),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.locally_jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, { 'i', 's' }),
-	},
-	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
-	},
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+  mapping = cmp.mapping.preset.insert {
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete {},
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
 }
 
---	SETTING THE BACKGROUND COLOR OF THE COMPLETION ENGINE 
-vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#131313", fg="#FFFFFF" })
-vim.api.nvim_set_hl(0, "Pmenu", { bg = "#131313", fg="#FFFFFF" })
-require("cmp").setup({
-	window = {
-		completion = {
-			border = "rounded",
-			winhighlight = "Normal:CmpNormal",
-		},
-		documentation = {
-			border = "rounded",
-			winhighlight = "Normal:Pmenu",
-		}
-	}
-})
+-- --	SETTING THE BACKGROUND COLOR OF THE COMPLETION ENGINE 
+-- vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#131313", fg="#FFFFFF" })
+-- vim.api.nvim_set_hl(0, "Pmenu", { bg = "#131313", fg="#FFFFFF" })
+-- require("cmp").setup({
+-- 	window = {
+-- 		completion = {
+-- 			border = "rounded",
+-- 			winhighlight = "Normal:CmpNormal",
+-- 		},
+-- 		documentation = {
+-- 			border = "rounded",
+-- 			winhighlight = "Normal:Pmenu",
+-- 		}
+-- 	}
+-- })
 
 
 ----------------------------
@@ -88,16 +88,16 @@ ls.add_snippets(nil, {
 			trig = "gen_imports",
 			namr = "Imports",
 			dscr = "Importing some commonly used libraries",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"import numpy as np",
 					"import torch",
 					"import torch.nn as nn",
 					"DTYPE = torch.float32"
 				}),
-				insert(0)
+			insert(0)
 		}),
 
 	},
@@ -112,10 +112,10 @@ ls.add_snippets(nil, {
 			trig = "gen_network",
 			namr = "Network",
 			dscr = "Generating the boilerplate for a torch network",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"class TestNetwork(nn.Module):",
 					"	def __init__(self, ):",
 					"		super().__init__()",
@@ -139,10 +139,10 @@ ls.add_snippets(nil, {
 			trig = "checkpoint",
 			namr = "Comment",
 			dscr = "Creating a comment box",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"#--------------------------------------------------------------------#",
 					"# #",
 					"#--------------------------------------------------------------------#",
@@ -162,10 +162,10 @@ ls.add_snippets(nil, {
 			trig = "docstring",
 			namr = "Doc",
 			dscr = "Creating a documentation section",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"\"\"\" ",
 					"<text here>",
 					" ",
@@ -188,10 +188,10 @@ ls.add_snippets(nil, {
 			trig = "gen_func",
 			namr = "genfunc",
 			dscr = "Generating boilerplate for a function prototype",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"def TestFunc() -> type:",
 					"	pass",
 				}),
@@ -211,10 +211,10 @@ ls.add_snippets(nil, {
 			trig = "gen_class",
 			namr = "genclass",
 			dscr = "Generating boilerplate for a class prototype",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"class ClassName:",
 					"	def __init__(self, ):",
 					"		pass",
@@ -233,10 +233,10 @@ ls.add_snippets(nil, {
 			trig = "ifnm",
 			namr = "ifnm",
 			dscr = "Generating a import guard",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"if __name__ == \"__main__\": ",
 					"	pass",
 				}),
@@ -254,10 +254,10 @@ ls.add_snippets(nil, {
 			trig = "timer",
 			namr = "timer",
 			dscr = "timing the execution of a snippet of code",
-			}, 
-			-- 	the content of the snippet 
-			{
-				text({
+		}, 
+		-- 	the content of the snippet 
+		{
+			text({
 					"import timeit",
 					"start = timeit.default_timer()",
 					"end = timeit.default_timer()",

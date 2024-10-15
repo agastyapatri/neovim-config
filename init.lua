@@ -28,7 +28,8 @@ require("configs.nvim-lspconfig")
 
 -- load the individual colorschemes depending on which theme is desired
 require("configs.tokyonight")
-vim.cmd("colorscheme tokyonight")
+-- require("configs.gruvbox")
+-- require("configs.ayu")
 require("configs.nvim-tree")
 require("configs.telescope")
 require("configs.nvim-cmp")

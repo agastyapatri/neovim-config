@@ -1,12 +1,14 @@
 --[[GENERAL EDITOR SETTINGS]]
-vim.api.nvim_set_hl(0, "Cursor", {bg = '#00BE33'})
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.o.scrolloff = 10
+
+-- 	changing the color of the cursor 
+vim.api.nvim_set_hl(0, "Cursor", {bg = '#02A226'})
 vim.o.guicursor = "i:block-Cursor"
 -- DISABLING NETRW FOR NVIM-TREE 
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1  
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1  
 
 -- Set highlight on search
 vim.o.hlsearch = false

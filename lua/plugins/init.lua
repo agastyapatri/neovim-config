@@ -9,9 +9,18 @@ return {
 		event = 'VeryLazy',
 
 	},
+
+	-- 	COLORSCHEMES 
 	{	
 		"folke/tokyonight.nvim"
 	},
+	{	
+		"ellisonleao/gruvbox.nvim"
+	},
+	{	
+		"Shatur/neovim-ayu",
+	},
+	
 	{
 		'windwp/nvim-autopairs',
 		event = 'VeryLazy',
