@@ -28,9 +28,10 @@ require("configs.nvim-lspconfig")
 
 -- load the individual colorschemes depending on which theme is desired
 require("configs.tokyonight")
+-- require("configs.ayu")
 require("configs.nvim-tree")
 require("configs.telescope")
 require("configs.nvim-cmp")
 require("configs.indent-blankline")
 require("configs.toggleterm")
--- require("configs.noice")
+require("configs.spectre")

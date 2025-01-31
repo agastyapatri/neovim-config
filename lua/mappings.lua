@@ -10,8 +10,11 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 
--- 		NETRW KEYMAPS
--- vim.keymap.set({"n", "i"}, "<A-1>", vim.cmd.NvimTreeOpen)
--- vim.keymap.set({"n", "i"}, "<A-2>", vim.cmd.NvimTreeClose)
+-- 		BARBAR KEYMAPS
+-- vim.keymap.set({"n", "v", "i"}, "<C-A-h>", vim.cmd.tabmove)
+-- vim.keymap.set({"n", "v", "i"}, "<A-l>", vim.cmd.BufferNext)
+-- vim.keymap.set({"n", "v", "i"}, "<A-0>", vim.cmd.BufferFirst)
+-- vim.keymap.set({"n", "v", "i"}, "<C-A-l>", vim.cmd.BufferMoveNext)
+-- vim.keymap.set({"n", "v", "i"}, "<C-A-h>", vim.cmd.BufferMovePrevious)
 
 

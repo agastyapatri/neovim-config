@@ -22,13 +22,12 @@ require("tokyonight").setup({
 
 	on_colors = function(colors)
 		colors.bg = "#000000"
-		colors.bg_sidebar = "#1d1d1d"
+		colors.bg_sidebar = "#000000"
 		colors.fg_sidebar = "#c9cac9"
 		colors.hint = colors.orange
 		colors.error = colors.red
 		colors.comment = "#696969"
 		colors.fg_gutter = "#b30000"
-
 	  end
 })
 vim.cmd("colorscheme tokyonight")
