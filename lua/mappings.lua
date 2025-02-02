@@ -11,10 +11,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 
 -- 		BARBAR KEYMAPS
--- vim.keymap.set({"n", "v", "i"}, "<C-A-h>", vim.cmd.tabmove)
--- vim.keymap.set({"n", "v", "i"}, "<A-l>", vim.cmd.BufferNext)
--- vim.keymap.set({"n", "v", "i"}, "<A-0>", vim.cmd.BufferFirst)
--- vim.keymap.set({"n", "v", "i"}, "<C-A-l>", vim.cmd.BufferMoveNext)
--- vim.keymap.set({"n", "v", "i"}, "<C-A-h>", vim.cmd.BufferMovePrevious)
+vim.keymap.set({"n", "v", "i", "t"}, "<leader>nd", vim.cmd.NoiceDismiss)
 
 

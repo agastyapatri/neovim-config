@@ -35,3 +35,6 @@ require("configs.nvim-cmp")
 require("configs.indent-blankline")
 require("configs.toggleterm")
 require("configs.spectre")
+require("configs.noice")
+require("configs.barbar")
+
