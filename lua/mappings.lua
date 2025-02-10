@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 
 -- 		BARBAR KEYMAPS
-vim.keymap.set({"n", "v", "i", "t"}, "<leader>nd", vim.cmd.NoiceDismiss)
+vim.keymap.set({"n", "v"}, "<leader>nd", vim.cmd.NoiceDismiss)
+vim.keymap.set("n", "<A-1>", vim.cmd.Oil)
 
 
